@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.*
@@ -168,7 +170,7 @@ fun ReadingScreen(word: String, onNext: () -> Unit) {
 fun Modifier.clickableWithoutRipple(onClick: () -> Unit): Modifier =
     this.then(
         Modifier.clickable(
-            interactionSource = androidx.compose.foundation.interaction.MutableInteractionSource(),
+            interactionSource = MutableInteractionSource(),
             indication = null,
             onClick = onClick
         )
